@@ -109,7 +109,7 @@ mysql> exit
 
 Your MySQL server is now installed and secured. Next, we will install PHP, the final component in the LEMP stack.
 
-## STEP 3 – INSTALLING PHP
+## STEP 4 – INSTALLING PHP
 
 You have Nginx installed to serve your content and MySQL installed to store and manage your data. Now you can install PHP to process code and generate dynamic content for the web server.
 
@@ -122,7 +122,163 @@ sudo apt install php-fpm php-mysql
 ```
 
 When prompted, type Y and press ENTER to confirm installation.
-You now have your PHP components installed. Next, you will configure Nginx to use them
+You now have your PHP components installed. Next, you will configure Nginx to use them.
+
+Run ``` php -version ``` to confirm if installed.
+
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20php.PNG)
+
+## STEP 5 — CONFIGURING NGINX TO USE PHP PROCESSOR
+When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. In this guide, we will use project LEMP as an example domain name.
+
+Create the root web directory for your domain as follows:
+
+```
+sudo mkdir /var/www/projectLEMP
+```
+
+Then, open a new configuration file in Nginx’s sites-available directory using your preferred command-line editor. Here, we’ll use vim:
+
+```
+sudo nano /etc/nginx/sites-available/projectLEMP
+```
+
+This will create a new blank file. Paste in the following bare-bones configuration:
+
+```
+#/etc/nginx/sites-available/projectLEMP
+ 
+server {
+	listen 80;
+	server_name projectLEMP www.projectLEMP;
+	root /var/www/projectLEMP;
+ 
+	index index.html index.htm index.php;
+ 
+	location / {
+    	try_files $uri $uri/ =404;
+	}
+ 
+	location ~ \.php$ {
+    	include snippets/fastcgi-php.conf;
+    	fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+ 	}
+ 
+	location ~ /\.ht {
+    	deny all;
+	}
+ 
+}
+```
+When you’re done editing, save and close the file using vim commands :wq
+
+Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
+
+```
+sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
+```
+
+This will tell Nginx to use the configuration next time it is reloaded. You can test your configuration for syntax errors by typing:
+
+```
+sudo nginx -t
+```
+
+You shall see following message:
+
+```
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+
+If any errors are reported, go back to your configuration file to review its contents before continuing.
+We also need to disable default Nginx host that is currently configured to listen on port 80, for this run:
+
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+
+Your new website is now active, but the web root /var/www/projectLEMP is still empty. Create an index.html file in that location so that we can test that your new server block works as expected:
+
+```
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+```
+
+Now go to your browser and try to open your website URL using IP address:
+
+```
+http://<Public-IP-Address>:80
+```
+
+Your LEMP stack is now fully configured. In the next step, we’ll create a PHP script to test that Nginx is in fact able to handle .php files within your newly configured website.
+
+
+## STEP 6 –-> TESTING PHP WITH NGINX
+You can do this by creating a test PHP file in your document root. Open a new file called info.php within your document root in your text editor:
+
+```
+sudo vim /var/www/projectLEMP/info.php
+```
+
+Type or paste the following lines into the new file. This is valid PHP code that will return information about your server:
+
+```
+<?php
+phpinfo();
+```
+
+You can now access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
+
+```
+http://`server_domain_or_IP`/info.php
+```
+You will see a web page containing detailed information about your server.
+
+## STEP 7 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
