@@ -140,7 +140,7 @@ sudo mkdir /var/www/projectLEMP
 Then, open a new configuration file in Nginx’s sites-available directory using your preferred command-line editor. Here, we’ll use vim:
 
 ```
-sudo nano /etc/nginx/sites-available/projectLEMP
+sudo vim /etc/nginx/sites-available/projectLEMP
 ```
 
 This will create a new blank file. Paste in the following bare-bones configuration:
@@ -211,6 +211,8 @@ Now go to your browser and try to open your website URL using IP address:
 ```
 http://<Public-IP-Address>:80
 ```
+
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20webpage%20php-nginx.PNG)
 
 Your LEMP stack is now fully configured. In the next step, we’ll create a PHP script to test that Nginx is in fact able to handle .php files within your newly configured website.
 
