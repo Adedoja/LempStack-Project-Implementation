@@ -54,6 +54,8 @@ Open a web browser of your choice and try to access following url
 http://<Public-IP-Address>:80
 ```
 
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20nginx%20webpage.PNG)
+
 ## STEP 3 -->  INSTALLING MYSQL
 To install MySQL, run the command below:
 
