@@ -71,8 +71,6 @@ log in to the MySQL console and type:
 sudo mysql
 ```
 
-![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20mysql%20new.PNG)
-
 This will take you to the MySQL server database. Set up your password using the command below:
 
 ```
