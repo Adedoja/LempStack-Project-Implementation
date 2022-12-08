@@ -238,6 +238,8 @@ http://`server_domain_or_IP`/info.php
 ```
 You will see a web page containing detailed information about your server.
 
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20php%20webpage.PNG)
+
 ## STEP 7 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
 In this step you will create a test database (DB) with simple "To do list" and configure access to it, so the Nginx website would be able to query data from the DB and display it.
 
