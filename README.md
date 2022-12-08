@@ -356,7 +356,8 @@ http://<Public_domain_or_IP>/todo_list.php
 You should see a page like this, showing the content you’ve inserted in your test table:
 That means your PHP environment is ready to connect and interact with your MySQL server.
 
-So, yeah, that's how to implement a Lemp Stack 
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstacklemp%20nginx%20html.PNG)
+So, yeah, that's how to implement a Lemp Stack.
 
 
 
