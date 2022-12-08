@@ -93,8 +93,6 @@ sudo mysql_secure_installation
 
 This will ask if you want to configure the VALIDATE PASSWORD PLUGIN. Answer Y for yes, or anything else to continue without enabling.
 
-If you answer “yes”, you’ll be asked to select a level of password validation. Keep in mind that if you enter 2 for the strongest level, you will receive errors when attempting to set any password which does not contain numbers, upper and lowercase letters, and special characters, or which is based on common dictionary words e.g PassWord.1.
-
 When you’re finished, test if you’re able to log in to the MySQL console by typing:
 
 ```
@@ -185,6 +183,8 @@ This will tell Nginx to use the configuration next time it is reloaded. You can 
 ```
 sudo nginx -t
 ```
+
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20config%20ok.PNG)
 
 You shall see following message:
 
