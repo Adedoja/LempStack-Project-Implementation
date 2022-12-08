@@ -99,6 +99,8 @@ When you’re finished, test if you’re able to log in to the MySQL console by 
 sudo mysql -p
 ```
 
+![](https://github.com/Adedoja/LempStack-Project-Implementation/blob/main/Lempstack%20Files/lemp%20mysql%20new.PNG)
+
 Notice the -p flag in this command, which will prompt you for the password used after changing the root user password.
 
 To exit the MySQL console, type:
